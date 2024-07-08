@@ -147,6 +147,13 @@ Once the AKS has been deployed, you can explore its configuration using Azure Po
 
 ## Exercise 3: Connect to your cluster
 
+Before Connecting, you need to put you as Azure Kubernetes Service RBAC Cluster Admin
+
+1. Go to your RG
+2. Click on Access control (IAM)
+3. Add -> Add role assignment
+4. Search for **Azure Kubernetes Service RBAC Cluster Admin**, Next, Select Member, search for your username, Next, Next Validate
+
 In this exercise we will connect to our cluster inside the Cloud Shell environment so we interact with it and then deploy our application in the next exercise.
 
 1. If you are not already on your cluster resource on Azure Portal do the next 2 steps otherwise, skip them
