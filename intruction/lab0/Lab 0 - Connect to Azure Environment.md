@@ -74,4 +74,4 @@ In order to simplify further commands, we will setup variables that will be used
    ```
 
 
-   az group create -n "rg-akstraining${TRAINEE_NB}"  -l $LOCATION
+   
