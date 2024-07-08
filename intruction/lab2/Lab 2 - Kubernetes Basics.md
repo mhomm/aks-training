@@ -211,8 +211,8 @@ We will deploy containers for both of them, see how to customize our application
 2. Execute the following commands to download the template deployment files :
 
    ```sh
-   wget https://raw.githubusercontent.com
-   wget https://raw.githubusercontent.com
+   wget https://raw.githubusercontent.com/mhomm/aks-training/main/yaml/lab2/api-deployment.yml
+   wget https://raw.githubusercontent.com/mhomm/aks-training/main/yaml/lab2/web-deployment.yml
    ```
 
 3. You can start editing the files using the `code api-deployment.yaml` and `code web-deployment.yaml` commands
@@ -280,8 +280,7 @@ Now our application is deployed we need to configure services for 2 purposes:
 2. Execute the following commands to download the service files :
 
    ```sh
-   wget https://raw.githubusercontent.com/jbpaux/aks-infra-training/main/yaml/lab2/api-service.yml
-   wget https://raw.githubusercontent.com/jbpaux/aks-infra-training/main/yaml/lab2/web-service-lb.yml
+   
    ```
 
 3. Open the files in the code editor to understand the configuration (selector, type and ports)
