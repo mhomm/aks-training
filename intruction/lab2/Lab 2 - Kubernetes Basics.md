@@ -264,7 +264,7 @@ We will deploy containers for both of them, see how to customize our application
 11. You can scale your deployment to have more instances
 
     ```sh
-    kubectl scale deployment web --replica 2 
+    kubectl scale deployment web --replicas 2 
     kubectl get deployment web
     kubectl get pods -l run=web -o wide
     ```
