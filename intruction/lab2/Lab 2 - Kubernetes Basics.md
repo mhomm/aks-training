@@ -339,8 +339,8 @@ In this part, we will create a `ConfigMap` resource with the expected environmen
 10. You can use the following command to see the deployment history:
 
     ```sh
-    kubectl rollout status web
-    kubectl rollout history web
+    kubectl rollout status deployment web
+    kubectl rollout history deployment web
     ```
 
 11. You will notice the number of pods reverted to 1. This is expected as it is the value configured in the applied file.
