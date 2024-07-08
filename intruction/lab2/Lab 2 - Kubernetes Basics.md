@@ -311,7 +311,7 @@ In this part, we will create a `ConfigMap` resource with the expected environmen
 2. Execute the following commands to download the `ConfigMap` template :
 
    ```sh
-   wget https://raw.githubusercontent.com/jbpaux/aks-infra-training/main/yaml/lab2/web-configmap.yml
+   wget https://raw.githubusercontent.com/mhomm/aks-training/main/yaml/lab2/web-configmap.yml
    ```
 
 3. Open the file in the code editor to understand the configuration
