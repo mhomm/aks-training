@@ -25,7 +25,7 @@ To create an **Azure Container Registry** you can choose to do it using the port
    | Setting            | Value                       |
    |--------------------|-----------------------------|
    | Subscription       |Training_B5NWJ001_AFKLM_AKS    |
-   | Resource Group     | rg-akstraining**X**         |
+   | Resource Group     | "trainee-khrd6m-**X**_rg"        |
    | Registry Name      | **PREFIX**acr**X**          |
    | Location           | West Europe                 |
    | Availability Zones | Checked                     |
