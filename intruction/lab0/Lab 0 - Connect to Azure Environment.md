@@ -62,7 +62,7 @@ In order to simplify further commands, we will setup variables that will be used
    ```sh
    export PREFIX=afk 
    export TRAINEE_NB=X # your assigned student number
-   export RESOURCE_GROUP="rg-akstraining${TRAINEE_NB}"
+   export RESOURCE_GROUP="trainee-khrd6m-${TRAINEE_NB}_rg"
    export LOCATION=westeurope
    ```
 
