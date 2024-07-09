@@ -133,7 +133,7 @@ You have successfully redeployed your application in namespaces.
 
 Don't forget to use the `-n` parameter to your `kubectl` commands to ensure you are in the correct namespace. You can also use `-A` or `--all-namespaces` switches to target all the namespaces (useful for `get` or `describe` sub-commands).
 
-## Exercise 3: Implement Resource quotas
+## Exercise 4: Implement Resource quotas
 
 Now you have redeploy the application in different namespaces you'll ensure they cannot use more resources the cluster administrator allocated to them.
 
