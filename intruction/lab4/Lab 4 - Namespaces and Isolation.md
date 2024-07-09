@@ -69,7 +69,7 @@ In this exercise you will create the two namespaces and then redeploy the differ
    code web-deployment.yml
    ```
 
-6. Change L25 of the file to `value: "http://api.api:8080"`
+6. Change L35 of the file to `value: "http://api.api:8080"`
 7. Save the file (using `Ctrl+S`) and exit the code editor (using `Ctrl+Q`)
 8. Re-apply your yml file:
 
