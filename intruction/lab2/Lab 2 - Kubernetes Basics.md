@@ -145,7 +145,52 @@ Once the AKS has been deployed, you can explore its configuration using Azure Po
    * Metrics: Graph/Dashboard of what happened in your registry
    * Diagnostic Settings: if you want to export the logs and metrics of the service to somewhere else
 
-## Exercise 3: Connect to your cluster
+## Exercise 3: Add required permissions to create namespaces
+
+In your current AKS environment, your user account has all privileges except `creating namespaces and manage quotas` which is unfortunate. To solve this, you need to add some additional permissions.
+
+You can perform this exercise either using the Azure Portal or you can use Azure CLI (choose one of them)
+
+### Azure Portal
+
+1. On the Azure Portal, in the search bar on the top of the screen search for `kubernetes` as before (or directly type the name of your AKS cluster and skip next step)
+2. Click on the AKS cluster you have created earlier
+3. On the left pane click on `Access Control (IAM)`
+4. In the middle, click on `Add role assignment`
+5. Select `Azure Kubernetes Service RBAC Cluster Admin` role (make sure you select this one and not another as the names are quite close)
+6. Click on `Next`
+7. Click on `+ Select members`
+8. Search for your user account on the right pane
+9. Click on your user account (it should now appear in the bottom part of the pane)
+10. Click on `Select`
+11. Click on `Review + assign`
+12. On the confirm page, click on `Review + assign` again
+
+### Azure CLI
+
+1. Open **Azure Cloud Shell**
+2. Execute the following commands to add your account as cluster administrator:
+
+   ```azcli
+   AKS_CLUSTER="${PREFIX}aks${TRAINEE_NB}"
+
+   # First you need to get your user id
+   USER_ID=$(az ad signed-in-user show --query id -o tsv)
+   
+   # You can have a look on the content of this command to know more about your user account:
+   az ad signed-in-user show
+
+   # Then you need your AKS Cluster Resource ID
+   AKS_RESOURCE_ID=$(az aks show -g ${RESOURCE_GROUP} -n ${AKS_CLUSTER} --query 'id' -o tsv)
+   # Have a look at the variable content:
+   echo $AKS_RESOURCE_ID
+
+   # Assign permission:
+   az role assignment create --assignee $USER_ID --role "Azure Kubernetes Service RBAC Cluster Admin" --scope $AKS_RESOURCE_ID
+   ```
+
+
+## Exercise 4: Connect to your cluster
 
 Before Connecting, you need to put you as Azure Kubernetes Service RBAC Cluster Admin
 
@@ -177,7 +222,7 @@ In this exercise we will connect to our cluster inside the Cloud Shell environme
 9. Use the same login information as the one you used to connect to the portal. Don't forget to `skip` the MFA registration and `continue` until you have to `close` the window
 10. If you come back to the Cloud Shell window, you will see all the deployments in your cluster.
 
-## Exercise 4: Pimp your shell with autocompletion and kubecolor (RECOMMENDED)
+## Exercise 5: Pimp your shell with autocompletion and kubecolor (RECOMMENDED)
 
 During this training you will use a lot of `kubectl` commands. It can be difficult to remember all commands, parameters and some resources have random part in their names thus making them difficult to type. To ease that we can leverage autocomplete mechanisms and the shell will automatically enter the correct parameter, pod name or whatever or give a list we can refine later when you use the `Tab` (or double `Tab`) key on your keyboard.
 
@@ -197,7 +242,7 @@ EOF
 source ~/.bashrc
 ```
 
-## Exercise 5: Deploy the YADA Application in your Azure Kubernetes Services (AKS) Cluster
+## Exercise 6: Deploy the YADA Application in your Azure Kubernetes Services (AKS) Cluster
 
 Now we are connected to our cluster and we are efficient at typing commands we can start deploying our application in it.
 
