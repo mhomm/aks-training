@@ -98,7 +98,7 @@ Now the **Control Plane** is upgraded you can start to upgrade the nodes of your
 2. You can assess the version of your Kubernetes Cluster (Control Plane) using these commands:
 
    ```sh
-   AKS_CLUSTER="${PREFIX}aks${STUDENT_NB}"
+   AKS_CLUSTER="${PREFIX}aks${TRAINEE_NB}"
 
    # Get all details for server and client
    kubectl version -o yaml
