@@ -135,9 +135,6 @@ When you create an Azure disk for use with AKS, you can create the disk resource
       --query id --output tsv
     ```
 
-    > [!NOTE]
-    > Azure Disks are billed by SKU for a specific size. These SKUs range from 32GiB for S4 or P4 disks to 32TiB for S80 or P80 disks (in preview). The throughput and IOPS performance of a Premium managed disk depends on both the SKU and the instance size of the nodes in the AKS cluster. See [Pricing and Performance of Managed Disks][managed-disk-pricing-performance].
-
     The disk resource ID is displayed once the command has successfully completed, as shown in the following example output. You use the disk ID to mount the disk in the next section.
 
     ```output
