@@ -23,7 +23,7 @@ A persistent volume claim (PVC) automatically provisions storage based on a stor
 
 
 
-2. Create the persistent volume claim using the [`kubectl apply`][kubectl-apply] command and specify your *azure-pvc.yaml* file.
+2. Create the persistent volume claim using the `kubectl apply` command and specify your *azure-pvc.yaml* file.
 
       ```bash
       kubectl apply -f azure-pvc.yaml
@@ -88,7 +88,7 @@ After you create the persistent volume claim, you must verify it has a status of
       ```bash
        kubectl apply -f azure-pvc-disk.yaml
       ```
-4. You now have a running pod with your Azure Disk mounted in the `/mnt/azure` directory. Check the pod configuration using the [`kubectl describe`][kubectl-describe] command.
+4. You now have a running pod with your Azure Disk mounted in the `/mnt/azure` directory. Check the pod configuration using the `kubectl describe` command.
 
       ```bash
        kubectl describe pod mypod
@@ -113,7 +113,7 @@ The following table includes parameters you can use to define a persistent volum
 
 When you create an Azure disk for use with AKS, you can create the disk resource in the **node** resource group. This approach allows the AKS cluster to access and manage the disk resource. If you instead create the disk in a separate resource group, you must grant the Azure Kubernetes Service (AKS) managed identity for your cluster the `Contributor` role to the disk's resource group.
 
-1. Identify the resource group name using the [`az aks show`][az-aks-show] command and add the `--query nodeResourceGroup` parameter.
+1. Identify the resource group name using the `az aks show` command and add the `--query nodeResourceGroup` parameter.
 
     ```azurecli-interactive
     az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
@@ -125,7 +125,7 @@ When you create an Azure disk for use with AKS, you can create the disk resource
     MC_myResourceGroup_myAKSCluster_eastus
     ```
 
-1. Create a disk using the [`az disk create`][az-disk-create] command. Specify the node resource group name and a name for the disk resource, such as *myAKSDisk*. The following example creates a *20*GiB disk, and outputs the ID of the disk after it's created. If you need to create a disk for use with Windows Server containers, add the `--os-type windows` parameter to correctly format the disk.
+1. Create a disk using the `az disk create` command. Specify the node resource group name and a name for the disk resource, such as *myAKSDisk*. The following example creates a *20*GiB disk, and outputs the ID of the disk after it's created. If you need to create a disk for use with Windows Server containers, add the `--os-type windows` parameter to correctly format the disk.
 
     ```azurecli-interactive
     az disk create \
@@ -183,7 +183,7 @@ When you create an Azure disk for use with AKS, you can create the disk resource
       storageClassName: managed-csi
     ```
 
-3. Create the *PersistentVolume* and *PersistentVolumeClaim* using the [`kubectl apply`][kubectl-apply] command and reference the two YAML files you created.
+3. Create the *PersistentVolume* and *PersistentVolumeClaim* using the `kubectl apply` command and reference the two YAML files you created.
 
     ```bash
     kubectl apply -f pv-azuredisk.yaml
@@ -232,7 +232,7 @@ When you create an Azure disk for use with AKS, you can create the disk resource
             claimName: pvc-azuredisk
     ```
 
-6. Apply the configuration and mount the volume using the [`kubectl apply`][kubectl-apply] command.
+6. Apply the configuration and mount the volume using the `kubectl apply` command.
 
     ```bash
     kubectl apply -f azure-disk-pod.yaml
