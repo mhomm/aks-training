@@ -116,7 +116,7 @@ When you create an Azure disk for use with AKS, you can create the disk resource
 1. Identify the resource group name using the `az aks show` command and add the `--query nodeResourceGroup` parameter.
 
     ```azurecli-interactive
-    MC_RG=$(az aks show --resource-group "${RESOURCE_GROUP}" --name "${PREFIX}aks${TRAINEE_NB} --query nodeResourceGroup -o tsv)
+    MC_RG=$(az aks show --resource-group "${RESOURCE_GROUP}" --name "${PREFIX}aks${TRAINEE_NB}" --query nodeResourceGroup -o tsv)
     ```
 
 
