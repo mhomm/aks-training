@@ -39,7 +39,7 @@ az role assignment create --assignee $API_GROUP_ID --role "Azure Kubernetes Serv
 3. OPTIONAL from here (if you want to validate): Execute the following command to find a colleague member of the group
 
 ```shell
-az ad group member list -g ${API_GROUP_NAME} -o table --query "[].displayName"
+az ad group member list -g "${API_GROUP_NAME}" -o table --query "[].displayName"
 ```
 
 4. Ask a colleague from the previous user list to connect to your cluster using its credentials (ask him/her to replace X with your number) and perform some actions on your API resources
