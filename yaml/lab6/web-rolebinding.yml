@@ -8,6 +8,6 @@ roleRef:
   kind: ClusterRole
   name: view
 subjects:
-- apiGroup: rbac.authorization.k8s.io
-  kind: Group
-  name: ba9568c7-cddf-45c4-aa5e-62d005ad0361
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: APISTUDENTSGROUP
