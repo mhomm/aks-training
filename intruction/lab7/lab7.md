@@ -1,5 +1,5 @@
-# Lab 7 - Secure and govern your cluster with Azure
-Policies
+# Lab 7 - Secure and govern your cluster with Azure Policies
+
 ## Introduction
 
 In this Lab you implement governance on your cluster by allowing pods only if they have the required tags so you can easily track the different deployed workloads. In real life you can implement kind of rules such as restricting privileged pods, kind of storage volumes you want to allow etc.
