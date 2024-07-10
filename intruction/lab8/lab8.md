@@ -116,20 +116,15 @@ When you create an Azure disk for use with AKS, you can create the disk resource
 1. Identify the resource group name using the `az aks show` command and add the `--query nodeResourceGroup` parameter.
 
     ```azurecli-interactive
-    az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
+    MC_RG=$(az aks show --resource-group "${RESOURCE_GROUP}" --name "${PREFIX}aks${TRAINEE_NB} --query nodeResourceGroup -o tsv)
     ```
 
-    The output of the command resembles the following example:
-   
-    ```output
-    MC_myResourceGroup_myAKSCluster_eastus
-    ```
 
-1. Create a disk using the `az disk create` command. Specify the node resource group name and a name for the disk resource, such as *myAKSDisk*. The following example creates a *20*GiB disk, and outputs the ID of the disk after it's created. If you need to create a disk for use with Windows Server containers, add the `--os-type windows` parameter to correctly format the disk.
+2. Create a disk using the `az disk create` command. Specify the node resource group name and a name for the disk resource, such as *myAKSDisk*. The following example creates a *20*GiB disk, and outputs the ID of the disk after it's created. If you need to create a disk for use with Windows Server containers, add the `--os-type windows` parameter to correctly format the disk.
 
     ```azurecli-interactive
     az disk create \
-      --resource-group MC_myResourceGroup_myAKSCluster_eastus \
+      --resource-group "${MC_RG}" \
       --name myAKSDisk \
       --size-gb 20 \
       --query id --output tsv
